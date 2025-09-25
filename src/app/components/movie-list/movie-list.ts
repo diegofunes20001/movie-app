@@ -34,7 +34,11 @@ export class MovieListComponent implements OnInit {
         this.loading = false;
       },
       error: (err: any) => {
-        this.error = 'Error al cargar películas populares';
+        if (err.status === 401) {
+          this.error = 'Clave API de TMDB inválida. Actualiza tmdbApiKey en src/app/environments/environment.ts con tu clave real de https://www.themoviedb.org/settings/api';
+        } else {
+          this.error = 'Error al cargar películas populares';
+        }
         this.loading = false;
         console.error(err);
       }
@@ -49,7 +53,11 @@ export class MovieListComponent implements OnInit {
         this.loading = false;
       },
       error: (err: any) => {
-        this.error = 'Error en la búsqueda';
+        if (err.status === 401) {
+          this.error = 'Clave API de TMDB inválida. Actualiza tmdbApiKey en src/app/environments/environment.ts con tu clave real de https://www.themoviedb.org/settings/api';
+        } else {
+          this.error = 'Error en la búsqueda';
+        }
         this.loading = false;
         console.error(err);
       }
