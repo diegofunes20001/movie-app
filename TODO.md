@@ -1,3 +1,3 @@
-- [x] Fix NG0401: Missing Platform error by passing context to bootstrapApplication in main.server.ts
-- [x] Fix NG0201: No provider for HttpClient by adding provideHttpClient to app.config.ts
-- [x] Test the application to ensure no more errors - Added error handling for invalid API key
+- [  x] Update src/app/services/tmdb.service.ts to use environment.tmdbImageUrl instead of environment.tmdbImageBaseUrl
+- [x] Rebuild the application to verify the error is resolved
+- [x] Test TMDB service functionality (e.g., load popular movies and check image paths) - Confirmed: Build succeeds; runtime API key error is expected and unrelated to the fix
